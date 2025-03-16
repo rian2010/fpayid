@@ -7,6 +7,7 @@ import Cta from "@/component/call-to-action";
 import Faq from "@/component/faq";
 import Hero from "@/component/hero";
 import Footer from "@/component/footer";
+import Team from "@/component/team-sections";
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Feature />
-      <Cta />
+      {/* <Cta /> */}
+      <Team />
       <Faq />
       <Footer />
     </div>

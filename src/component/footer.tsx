@@ -1,124 +1,123 @@
 import React from "react";
 import {
-  Facebook,
+  Github,
   Twitter,
+  Facebook,
   Instagram,
   Linkedin,
   Mail,
-  Phone,
-  MapPin,
 } from "lucide-react";
-import Image from "next/image";
-import logo from "@/asset/fastx.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-6 pt-10 pb-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <div className="mb-4">
-              <Image src={logo} alt="Company Logo" className="h-38 w-38" />
-            </div>
-            <p className="mb-4 text-sm">
-              Creating innovative solutions since 2010. Our mission is to
-              deliver high-quality products and services that exceed customer
-              expectations.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-            </div>
+    <footer className="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+          <div className="mb-6 md:mb-0">
+            <a href="#" className="flex items-center">
+              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                F-pay
+              </span>
+            </a>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-white">
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin size={20} className="mr-2 mt-1 flex-shrink-0" />
-                <span>
-                  123 Business Avenue, Suite 100
-                  <br />
-                  San Francisco, CA 94107
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={20} className="mr-2 flex-shrink-0" />
-                <span>(123) 456-7890</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={20} className="mr-2 flex-shrink-0" />
-                <span>info@companyname.com</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-white">
-              Newsletter
-            </h3>
-            <p className="mb-4 text-sm">
-              Subscribe to our newsletter to receive updates on our latest
-              products, services, and promotions.
-            </p>
-            <form className="space-y-2">
-              <div>
-                <input
-                  type="email"
-                  placeholder="Your Email Address"
-                  className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500 text-white"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors"
+          <ul className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm font-medium text-gray-500 dark:text-gray-400">
+            <li>
+              <a
+                href="#"
+                className="hover:underline hover:text-gray-900 dark:hover:text-white"
               >
-                Subscribe
-              </button>
-            </form>
-          </div>
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:underline hover:text-gray-900 dark:hover:text-white"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:underline hover:text-gray-900 dark:hover:text-white"
+              >
+                Licensing
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:underline hover:text-gray-900 dark:hover:text-white"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* Divider */}
-        <hr className="my-8 border-gray-700" />
+        <div className="flex justify-center space-x-6 my-6">
+          {/* Social Media Icons from lucide-react */}
+          <a
+            href="#"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <Github size={20} />
+            <span className="sr-only">GitHub</span>
+          </a>
+          <a
+            href="#"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <Twitter size={20} />
+            <span className="sr-only">Twitter</span>
+          </a>
+          <a
+            href="#"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <Facebook size={20} />
+            <span className="sr-only">Facebook</span>
+          </a>
+          <a
+            href="#"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <Instagram size={20} />
+            <span className="sr-only">Instagram</span>
+          </a>
+          <a
+            href="#"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <Linkedin size={20} />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+          <a
+            href="#"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <Mail size={20} />
+            <span className="sr-only">Email</span>
+          </a>
+        </div>
 
-        {/* Bottom Footer */}
-        <div className="md:flex md:items-center md:justify-between text-sm">
-          <div className="mb-4 md:mb-0">
-            <p>&copy; {currentYear} Company Name. All rights reserved.</p>
-          </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-2">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700" />
+
+        <div className="text-center">
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            © {currentYear}{" "}
+            <a
+              href="#"
+              className="hover:underline text-gray-700 dark:text-gray-300"
+            >
+              F-pay
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Cookie Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Accessibility
-            </a>
-          </div>
+            . All Rights Reserved.
+          </span>
         </div>
       </div>
     </footer>

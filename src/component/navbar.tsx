@@ -26,18 +26,17 @@ const Navbar: React.FC = () => {
   // Navigation items
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
+    { name: "Feature", href: "/services" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: "/contact" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-gray-900/90 shadow-lg"
-          : "bg-transparent backdrop-blur-sm"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? "bg-gray-900/90 shadow-lg"
+        : "bg-transparent backdrop-blur-sm"
+        }`}
     >
       <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3">
         {/* Logo */}
@@ -95,11 +94,10 @@ const Navbar: React.FC = () => {
 
         {/* Compact Mobile Menu */}
         <div
-          className={`absolute top-full right-0 mt-1 mr-4 bg-gray-900 rounded-lg shadow-lg overflow-hidden transition-all duration-300 md:hidden ${
-            isOpen
-              ? "opacity-100 max-h-64"
-              : "opacity-0 max-h-0 pointer-events-none"
-          }`}
+          className={`absolute top-full right-0 mt-1 mr-4 bg-gray-900 rounded-lg shadow-lg overflow-hidden transition-all duration-300 md:hidden ${isOpen
+            ? "opacity-100 max-h-64"
+            : "opacity-0 max-h-0 pointer-events-none"
+            }`}
           style={{ minWidth: "180px" }}
         >
           <ul className="py-2">
