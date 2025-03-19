@@ -6,7 +6,7 @@ const TeamSection = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Ratu Monica Nabila Sylva",
       role: "CEO & Founder",
       image: "/api/placeholder/300/300",
       bio: "With over 15 years of industry experience, Sarah leads our vision and strategy.",
@@ -19,7 +19,7 @@ const TeamSection = () => {
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Audrey Miftiara",
       role: "CTO",
       image: "/api/placeholder/300/300",
       bio: "Michael brings deep technical expertise and leads our engineering initiatives.",
@@ -32,7 +32,7 @@ const TeamSection = () => {
     },
     {
       id: 3,
-      name: "Aisha Patel",
+      name: "Adrian Dapot Oktavian Tambunan",
       role: "Design Director",
       image: "/api/placeholder/300/300",
       bio: "Aisha ensures our products are both beautiful and functional for our users.",
@@ -45,7 +45,7 @@ const TeamSection = () => {
     },
     {
       id: 4,
-      name: "Carlos Rodriguez",
+      name: "Niko Edward Hutagalung",
       role: "Marketing Lead",
       image: "/api/placeholder/300/300",
       bio: "Carlos develops our brand strategies and leads our marketing campaigns.",
@@ -58,7 +58,7 @@ const TeamSection = () => {
     },
     {
       id: 5,
-      name: "Emma Wilson",
+      name: "Anita Togi Marito Sibuea",
       role: "Product Manager",
       image: "/api/placeholder/300/300",
       bio: "Emma oversees product development and ensures we deliver solutions that meet customer needs.",
