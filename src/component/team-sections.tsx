@@ -9,7 +9,6 @@ import Niko from "@/asset/IMG_6885.JPG";
 import Anita from "@/asset/IMG_6892.JPG";
 
 const TeamSection = () => {
-  // Sample team data - replace with your actual team members
   const teamMembers = [
     {
       id: 1,
@@ -86,19 +85,17 @@ const TeamSection = () => {
             Meet Our Team
           </h2>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We're a passionate group of professionals committed to delivering
+            We&apos;re a passionate group of professionals committed to delivering
             excellence in everything we do.
           </p>
         </div>
 
-        {/* Modified grid for 5 team members */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {teamMembers.map((member) => (
             <div
               key={member.id}
               className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:-translate-y-1"
             >
-              {/* Fixed height container for consistent image sizing */}
               <div className="relative w-full h-64">
                 <Image
                   src={member.image}
@@ -107,8 +104,9 @@ const TeamSection = () => {
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
                   style={{
-                    objectFit: 'cover',
-                    objectPosition: member.name === "Audrey Miftiara" ? 'center 10%' : 'center top'
+                    objectFit: "cover",
+                    objectPosition:
+                      member.name === "Audrey Miftiara" ? "center 10%" : "center top",
                   }}
                 />
               </div>
@@ -127,7 +125,7 @@ const TeamSection = () => {
                     <a
                       href={member.socials.linkedin}
                       className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                      aria-label={`${member.name}'s LinkedIn profile`}
+                      aria-label={`${member.name}&apos;s LinkedIn profile`}
                     >
                       <Linkedin size={18} />
                     </a>
@@ -136,7 +134,7 @@ const TeamSection = () => {
                     <a
                       href={member.socials.twitter}
                       className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                      aria-label={`${member.name}'s Twitter profile`}
+                      aria-label={`${member.name}&apos;s Twitter profile`}
                     >
                       <Twitter size={18} />
                     </a>
@@ -145,7 +143,7 @@ const TeamSection = () => {
                     <a
                       href={member.socials.github}
                       className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                      aria-label={`${member.name}'s GitHub profile`}
+                      aria-label={`${member.name}&apos;s GitHub profile`}
                     >
                       <Github size={18} />
                     </a>
@@ -170,3 +168,4 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+
