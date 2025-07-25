@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  QrCode,
-  ArrowRightLeft,
-  Fingerprint,
-  Shield,
-} from "lucide-react";
+import { QrCode, ArrowRightLeft, Fingerprint, Shield } from "lucide-react";
 
 const InteractiveFeatures = () => {
   const [activeFeature, setActiveFeature] = useState("balance");
@@ -59,6 +54,10 @@ const InteractiveFeatures = () => {
 
   const activeFeatureData = features.find((f) => f.id === activeFeature);
 
+  if (!activeFeatureData) {
+    return null; // Or a fallback UI like <p>Loading...</p>
+  }
+
   return (
     <div id="feature" className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
@@ -69,7 +68,6 @@ const InteractiveFeatures = () => {
           Everything you need for mobile payments
         </p>
 
-        {/* Feature Tabs */}
         <div className="mt-10 flex justify-center">
           <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {features.map((feature) => (
@@ -88,11 +86,9 @@ const InteractiveFeatures = () => {
           </div>
         </div>
 
-        {/* Main Feature Panel */}
         <div className="mt-12 relative">
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="lg:grid lg:grid-cols-2">
-              {/* Description */}
               <div className="p-8 sm:p-10 flex flex-col justify-center">
                 <div
                   className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${activeFeatureData.color}`}
@@ -107,7 +103,6 @@ const InteractiveFeatures = () => {
                 </p>
               </div>
 
-              {/* Image Display */}
               <div className="relative flex items-center justify-center p-5">
                 <div className="relative w-64 h-[28rem] rounded-3xl border-12 border-gray-800 overflow-hidden shadow-2xl bg-gray-900">
                   <div className="h-full w-full overflow-hidden">
@@ -127,7 +122,6 @@ const InteractiveFeatures = () => {
           </div>
         </div>
 
-        {/* Feature Cards */}
         <div className="mt-12 hidden md:grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <div
