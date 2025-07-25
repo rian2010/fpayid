@@ -1,5 +1,4 @@
 import React from "react";
-import { FaMoneyCheckAlt, FaExchangeAlt, FaChartBar } from "react-icons/fa";
 import phoneMockup from "@/asset/section.png"; // Replace with your actual image
 import Image from "next/image";
 
