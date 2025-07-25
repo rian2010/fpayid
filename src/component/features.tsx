@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { QrCodeIcon } from "lucide-react";
-import { ArrowRightLeftIcon } from "lucide-react";
-import { Fingerprint } from "lucide-react";
-import { Shield } from "lucide-react";
+import {
+  QrCode,
+  ArrowRightLeft,
+  Fingerprint,
+  Shield,
+} from "lucide-react";
 
 const InteractiveFeatures = () => {
   const [activeFeature, setActiveFeature] = useState("balance");
@@ -13,7 +15,7 @@ const InteractiveFeatures = () => {
       name: "Balance Transfer",
       description:
         "Allows users to transfer money to other users. Supports real-time transactions with encrypted security (e.g., PIN, biometric verification) to protect funds.",
-      icon: ArrowRightLeftIcon,
+      icon: ArrowRightLeft,
       color: "bg-indigo-100 text-indigo-600",
       mockupImage:
         "https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png",
@@ -25,7 +27,7 @@ const InteractiveFeatures = () => {
       name: "QR Payment",
       description:
         "Enables fast payments by scanning QR codes from merchants or other users. Designed for bill payments, retail shopping, or peer-to-peer transfers.",
-      icon: QrCodeIcon,
+      icon: QrCode,
       color: "bg-emerald-100 text-emerald-600",
       mockupImage:
         "https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png",
@@ -67,7 +69,7 @@ const InteractiveFeatures = () => {
           Everything you need for mobile payments
         </p>
 
-        {/* Feature Selection Tabs */}
+        {/* Feature Tabs */}
         <div className="mt-10 flex justify-center">
           <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {features.map((feature) => (
@@ -86,11 +88,11 @@ const InteractiveFeatures = () => {
           </div>
         </div>
 
-        {/* Feature Display */}
+        {/* Main Feature Panel */}
         <div className="mt-12 relative">
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="lg:grid lg:grid-cols-2">
-              {/* Feature Content */}
+              {/* Description */}
               <div className="p-8 sm:p-10 flex flex-col justify-center">
                 <div
                   className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${activeFeatureData.color}`}
@@ -105,7 +107,7 @@ const InteractiveFeatures = () => {
                 </p>
               </div>
 
-              {/* Phone Demo with Image */}
+              {/* Image Display */}
               <div className="relative flex items-center justify-center p-5">
                 <div className="relative w-64 h-[28rem] rounded-3xl border-12 border-gray-800 overflow-hidden shadow-2xl bg-gray-900">
                   <div className="h-full w-full overflow-hidden">
@@ -131,7 +133,9 @@ const InteractiveFeatures = () => {
             <div
               key={feature.id}
               className={`rounded-xl p-6 cursor-pointer transition-all ${activeFeature === feature.id
-                ? `ring-2 ring-offset-2 ${feature.color.replace("bg-", "ring-").replace("-100", "-500")} shadow-md`
+                ? `ring-2 ring-offset-2 ${feature.color
+                  .replace("bg-", "ring-")
+                  .replace("-100", "-500")} shadow-md`
                 : "bg-white hover:shadow-md"
                 }`}
               onClick={() => setActiveFeature(feature.id)}
@@ -156,3 +160,4 @@ const InteractiveFeatures = () => {
 };
 
 export default InteractiveFeatures;
+

@@ -1,19 +1,20 @@
 import React from 'react';
-import Phone from "@/asset/phone.png"
+import Phone from "@/asset/phone.png";
 import Image from 'next/image';
 
 export default function Hero() {
-
   return (
     <div id="home" className="bg-gray-50 py-12">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 lg:pb-40">
         {/* Background Illustration */}
         <div className="absolute -bottom-4 right-0 overflow-hidden pointer-events-none">
-          <img
-            className="max-w-none h-auto transform scale-125 lg:scale-75 origin-bottom-right"
+          <Image
             src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/background-pattern.png"
-            alt=""
+            alt="Background pattern"
+            width={600}
+            height={600}
+            className="max-w-none h-auto transform scale-125 lg:scale-75 origin-bottom-right"
           />
         </div>
 
@@ -34,18 +35,14 @@ export default function Hero() {
               >
                 Try our app
               </a>
-
-              <div className="mt-8 sm:mt-16">
-
-
-              </div>
+              <div className="mt-8 sm:mt-16"></div>
             </div>
 
             <div className="xl:col-span-1">
               <Image
                 className="mx-auto w-2/3 max-w-sm animate-float"
                 src={Phone}
-                alt="Illustration"
+                alt="Phone illustration"
               />
             </div>
           </div>

@@ -59,7 +59,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Everything you need to know about F-Pay's digital wallet services
+            Everything you need to know about F-Pay&apos;s digital wallet services
           </p>
         </div>
 
@@ -127,3 +127,4 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+
