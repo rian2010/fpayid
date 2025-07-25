@@ -58,7 +58,7 @@ const InteractiveFeatures = () => {
   const activeFeatureData = features.find((f) => f.id === activeFeature);
 
   return (
-    <div className="bg-white py-12 sm:py-16">
+    <div id="feature" className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-base font-semibold text-indigo-600">
           Digital Wallet Features
@@ -74,8 +74,8 @@ const InteractiveFeatures = () => {
               <button
                 key={feature.id}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${activeFeature === feature.id
-                    ? `${feature.color} shadow-md`
-                    : "bg-white text-gray-600 hover:bg-gray-100"
+                  ? `${feature.color} shadow-md`
+                  : "bg-white text-gray-600 hover:bg-gray-100"
                   }`}
                 onClick={() => setActiveFeature(feature.id)}
               >
@@ -126,13 +126,13 @@ const InteractiveFeatures = () => {
         </div>
 
         {/* Feature Cards */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 hidden md:grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <div
               key={feature.id}
               className={`rounded-xl p-6 cursor-pointer transition-all ${activeFeature === feature.id
-                  ? `ring-2 ring-offset-2 ${feature.color.replace("bg-", "ring-").replace("-100", "-500")} shadow-md`
-                  : "bg-white hover:shadow-md"
+                ? `ring-2 ring-offset-2 ${feature.color.replace("bg-", "ring-").replace("-100", "-500")} shadow-md`
+                : "bg-white hover:shadow-md"
                 }`}
               onClick={() => setActiveFeature(feature.id)}
             >

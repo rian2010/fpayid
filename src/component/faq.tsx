@@ -47,7 +47,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-12 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="faq" className="py-12 bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Top right gradient */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400 via-purple-500 to-transparent opacity-30 rounded-full blur-3xl -mr-16 -mt-16 dark:opacity-10"></div>
 

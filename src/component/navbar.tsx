@@ -7,13 +7,9 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Toggle mobile menu
   const toggleMenu = () => setIsOpen((prev) => !prev);
-
-  // Close menu when a link is clicked
   const closeMenu = () => setIsOpen(false);
 
-  // Handle scroll detection
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -23,19 +19,16 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation items
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Feature", href: "/services" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/contact" },
+    { name: "Home", href: "#home" },
+    { name: "Feature", href: "#feature" },
+    { name: "Team", href: "#team" },
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-        ? "bg-gray-900/90 shadow-lg"
-        : "bg-transparent backdrop-blur-sm"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 shadow-lg" : "bg-transparent backdrop-blur-sm"
         }`}
     >
       <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3">
@@ -48,7 +41,10 @@ const Navbar: React.FC = () => {
             alt="F-Pay Logo"
             className="sm:w-12 sm:h-12 w-10 h-10"
           />
-          <span className="text-xl sm:text-2xl font-semibold text-white">
+          <span
+            className={`text-xl sm:text-2xl font-semibold ${scrolled ? "text-white" : "text-black"
+              }`}
+          >
             F-Pay
           </span>
         </Link>
@@ -59,7 +55,8 @@ const Navbar: React.FC = () => {
           type="button"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
-          className="md:hidden p-2 text-white rounded-lg hover:bg-white/10 focus:ring-2 focus:ring-white z-20"
+          className={`md:hidden p-2 rounded-lg hover:bg-white/10 focus:ring-2 focus:ring-white z-20 ${scrolled ? "text-white" : "text-black"
+            }`}
         >
           <svg
             className="w-6 h-6"
@@ -78,12 +75,13 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <ul className="flex space-x-8 text-white">
+          <ul className="flex space-x-8">
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link
                   href={item.href}
-                  className="text-white hover:text-gray-300 transition-colors"
+                  className={`transition-colors hover:text-gray-300 ${scrolled ? "text-white" : "text-black"
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -92,7 +90,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
 
-        {/* Compact Mobile Menu */}
+        {/* Mobile Menu */}
         <div
           className={`absolute top-full right-0 mt-1 mr-4 bg-gray-900 rounded-lg shadow-lg overflow-hidden transition-all duration-300 md:hidden ${isOpen
             ? "opacity-100 max-h-64"
@@ -120,3 +118,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

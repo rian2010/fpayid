@@ -1,5 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+
+import Ratu from "@/asset/IMG_6888.JPG";
+import Audrey from "@/asset/IMG_6893.JPG";
+import Adrian from "@/asset/IMG_6882.JPG";
+import Niko from "@/asset/IMG_6885.JPG";
+import Anita from "@/asset/IMG_6892.JPG";
 
 const TeamSection = () => {
   // Sample team data - replace with your actual team members
@@ -8,7 +15,7 @@ const TeamSection = () => {
       id: 1,
       name: "Ratu Monica Nabila Sylva",
       role: "CEO & Founder",
-      image: "/api/placeholder/300/300",
+      image: Ratu,
       bio: "With over 15 years of industry experience, Sarah leads our vision and strategy.",
       socials: {
         linkedin: "#",
@@ -21,7 +28,7 @@ const TeamSection = () => {
       id: 2,
       name: "Audrey Miftiara",
       role: "CTO",
-      image: "/api/placeholder/300/300",
+      image: Audrey,
       bio: "Michael brings deep technical expertise and leads our engineering initiatives.",
       socials: {
         linkedin: "#",
@@ -34,7 +41,7 @@ const TeamSection = () => {
       id: 3,
       name: "Adrian Dapot Oktavian Tambunan",
       role: "Design Director",
-      image: "/api/placeholder/300/300",
+      image: Adrian,
       bio: "Aisha ensures our products are both beautiful and functional for our users.",
       socials: {
         linkedin: "#",
@@ -47,7 +54,7 @@ const TeamSection = () => {
       id: 4,
       name: "Niko Edward Hutagalung",
       role: "Marketing Lead",
-      image: "/api/placeholder/300/300",
+      image: Niko,
       bio: "Carlos develops our brand strategies and leads our marketing campaigns.",
       socials: {
         linkedin: "#",
@@ -60,7 +67,7 @@ const TeamSection = () => {
       id: 5,
       name: "Anita Togi Marito Sibuea",
       role: "Product Manager",
-      image: "/api/placeholder/300/300",
+      image: Anita,
       bio: "Emma oversees product development and ensures we deliver solutions that meet customer needs.",
       socials: {
         linkedin: "#",
@@ -72,7 +79,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section id="team" className="py-16 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -91,11 +98,20 @@ const TeamSection = () => {
               key={member.id}
               className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:-translate-y-1"
             >
-              <img
-                src={member.image}
-                alt={`${member.name} photo`}
-                className="w-full h-64 object-cover object-center"
-              />
+              {/* Fixed height container for consistent image sizing */}
+              <div className="relative w-full h-64">
+                <Image
+                  src={member.image}
+                  alt={`${member.name} photo`}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: member.name === "Audrey Miftiara" ? 'center 10%' : 'center top'
+                  }}
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {member.name}
